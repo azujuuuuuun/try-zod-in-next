@@ -4,7 +4,7 @@ import type {
   GetServerSideProps,
 } from "next";
 import Head from "next/head";
-import { querySchema, Query } from "../model/search/query";
+import { querySchema, Query } from "../interface/search/request/query";
 import { Sort, sortOption } from "../model/search/sort";
 import { ValidationError } from "../app/error/validation-error";
 

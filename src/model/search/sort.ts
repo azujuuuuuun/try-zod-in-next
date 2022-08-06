@@ -1,5 +1,3 @@
-import { z } from "zod";
-
 export const sortOption = {
   new: {
     value: "new",
@@ -11,11 +9,4 @@ export const sortOption = {
   },
 } as const;
 
-export const sortSchema = z
-  .union([
-    z.literal(sortOption.new.value),
-    z.literal(sortOption.recommend.value),
-  ])
-  .default("recommend");
-
-export type Sort = z.infer<typeof sortSchema>;
+export type Sort = keyof typeof sortOption;
