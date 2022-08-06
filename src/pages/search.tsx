@@ -1,10 +1,14 @@
-import type { NextPageContext, NextPage, GetServerSideProps } from "next";
+import type {
+  GetServerSidePropsContext,
+  NextPage,
+  GetServerSideProps,
+} from "next";
 import Head from "next/head";
 import { querySchema, Query } from "../model/search/query";
 import { Sort, sortOption } from "../model/search/sort";
 import { ValidationError } from "../app/error/validation-error";
 
-const validateQuery = (query: NextPageContext["query"]): Query => {
+const validateQuery = (query: GetServerSidePropsContext["query"]): Query => {
   try {
     return querySchema.parse(query);
   } catch (e) {
