@@ -2,7 +2,7 @@ import type { NextPage, GetServerSideProps } from "next";
 import Head from "next/head";
 import { validateQuery } from "@/interface/search/request/validate-query";
 import { Sort, sortOption } from "@/domain/model/search/sort";
-import { ValidationError } from "@/app/error/validation-error";
+import { ValidationError } from "@/application/error/validation-error";
 
 interface SearchPageProps {
   searchQuery: string;
