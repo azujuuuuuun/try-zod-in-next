@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 import styles from "../../styles/Home.module.css";
 
@@ -23,6 +24,13 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
+          <Link href="/search?q=Zod&page=1&sort=recommend">
+            <a className={styles.card}>
+              <h2>Search &rarr;</h2>
+              <p>Search information about Zod.</p>
+            </a>
+          </Link>
+
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
