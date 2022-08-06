@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { sortOption } from "@/model/search/sort";
+import { sortOption } from "@/domain/model/search/sort";
 
 export const sortSchema = z
   .union([
