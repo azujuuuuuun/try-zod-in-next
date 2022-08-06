@@ -1,20 +1,8 @@
-import type {
-  GetServerSidePropsContext,
-  NextPage,
-  GetServerSideProps,
-} from "next";
+import type { NextPage, GetServerSideProps } from "next";
 import Head from "next/head";
-import { querySchema, Query } from "../interface/search/request/query";
+import { validateQuery } from "../interface/search/request/validate-query";
 import { Sort, sortOption } from "../model/search/sort";
 import { ValidationError } from "../app/error/validation-error";
-
-const validateQuery = (query: GetServerSidePropsContext["query"]): Query => {
-  try {
-    return querySchema.parse(query);
-  } catch (e) {
-    throw new ValidationError("Validation Error");
-  }
-};
 
 interface SearchPageProps {
   searchQuery: string;
